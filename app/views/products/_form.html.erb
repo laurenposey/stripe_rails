@@ -1,0 +1,14 @@
+<% if @add_to_cart === false %>
+  <%= simple_form_for @product do |f| %>
+    <%= f.input :name %>
+    <%= f.input :price %>
+    <%= f.input :description %>
+    <%= f.submit %>
+  <% end %>
+<% else %>
+  <h2> Confirm add product</h2>
+  <%= form_for @product do |f| %>
+    <%= f.hidden_field :cart_id, value: @cart.id %>
+    <%= f.submit "Add"%>
+  <% end %>
+<% end %>

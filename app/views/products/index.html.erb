@@ -1,0 +1,12 @@
+<h1>Our Products</h1>
+<hr>
+<% if @products.any? %>
+  <ul>
+    <% @products.each do |product| %>
+     <li><%= product.name %> | <%= product.description %> | <%= product.price %> <%= link_to 'Add to Cart', edit_product_path(product, add_to_cart: true) %></li>
+    <% end %>
+  </ul>
+<% else %>
+ <h3>No products for sale</h3>
+<% end %>
+<%= link_to "Add Product", new_product_path %>
