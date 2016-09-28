@@ -1,1 +1,12 @@
 <h2>Your Cart</h2>
+
+<% if @cart.products.any? %>
+  <ul>
+    <%@cart.products.each do |product|%>
+      <li> <%= product.name %> | <%= product.price %> </li>
+    <%end %>
+  </ul>
+<% else %>
+<h3>Your cart is empty</h3>
+<% end %>
+<%= link_to "Checkout", new_charge_path %>
