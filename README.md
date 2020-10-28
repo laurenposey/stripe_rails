@@ -1,2 +1,2 @@
 # stripe_rails
-An in-class project at Epicodus
+An in-class project at Epicodus 2016
